@@ -55,4 +55,52 @@ Each day consists of:
 
 - GitHub: [GauravPatil](https://github.com/Gaurapatil1)
 - LinkedIn: [Gaurav Patil](https://www.linkedin.com/in/gaurav-patil-18b4682b2)
+# DSA Day 2 - Push Zeros to End
 
+## Problem Statement
+Given an array of integers, push all the zeros to the end of the array while maintaining the relative order of the non-zero elements.
+
+## Example
+**Input:**  
+`arr = [0, 1, 0, 3, 12]`  
+
+**Output:**  
+`[1, 3, 12, 0, 0]`
+
+## Approach
+- Initialize a pointer `count = 0` to track the position for the next non-zero element.
+- Traverse the array:
+  - If the current element is non-zero:
+    - Swap it with the element at index `count`.
+    - Increment `count`.
+- This ensures all non-zero elements are moved to the front while keeping their order, and all zeros are moved to the end.
+
+## Time Complexity
+- **O(n)**, where n is the length of the array
+
+## Space Complexity
+- **O(1)**, in-place modification
+
+## Python Code
+```python
+# User function Template for python3
+
+class Solution:
+    def pushZerosToEnd(self, arr):
+        # Pointer to track the position for next non-zero element
+        count = 0
+
+        # Traverse the array
+        for i in range(len(arr)):
+            # If the current element is non-zero
+            if arr[i] != 0:
+                # Swap the current element with the element at 'count'
+                arr[i], arr[count] = arr[count], arr[i]
+                # Move 'count' pointer to the next position
+                count += 1
+
+# Example usage
+if __name__ == "__main__":
+    arr = [0, 1, 0, 3, 12]
+    Solution().pushZerosToEnd(arr)
+    print("Array after pushing zeros to end:", arr)
