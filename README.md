@@ -104,3 +104,36 @@ if __name__ == "__main__":
     arr = [0, 1, 0, 3, 12]
     Solution().pushZerosToEnd(arr)
     print("Array after pushing zeros to end:", arr)
+
+Day 3: Reverse an Array
+
+✅ Concept:
+
+Reversing an array means changing the order of elements such that the first becomes last, second becomes second last, and so on.
+
+Example:
+Input: [1, 2, 3, 4]
+Output: [4, 3, 2, 1]
+
+
+---
+
+✅ Approach: Two-Pointer (In-Place Swap)
+
+Steps:
+
+1. Initialize two pointers: i = 0, j = n-1
+
+
+2. Swap elements at i and j
+
+
+3. Move i forward and j backward
+
+
+4. Repeat until i < j
+
+
+
+Time Complexity: O(n)
+Space Complexity: O(1)
